@@ -1,0 +1,14 @@
+name: craft_core
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pytorch=2.1.1
+  - cpuonly
+  - numpy<2
+  - mkl=2023.1.0
+  - intel-openmp=2023.1.0
+  - git-lfs
+  - matplotlib=3.8
