@@ -14,7 +14,7 @@ while maintaining high memory efficiency. Please refer to our paper for methodol
 
 ## Prerequisites
 
-- **OS:** Linux or Windows 11
+- **OS:** Linux, Windows or macOS
 - **Hardware:** CPU-only
 - **Software:**
     - Conda
@@ -40,6 +40,8 @@ In this case, continue with conda environment creation and activation. After act
 git reset --hard
 ```
 
+If Git-LFS quota is exceeded, source code containing all traces can be download from the [Zenodo archive](https://doi.org/10.5281/zenodo.19022696).
+
 # Single Run
 
 Example Configuration:
@@ -48,8 +50,16 @@ Example Configuration:
 - 8-node cluster (64 GPUs)
 - `traces/DE.pkl` input expert load distribution
 
-```shell
+Windows:
+
+```powershell
 python craft_core.py --nodes 8 --experts 256 --layers 61 --first-moe-layer 3 --dist-file .\traces\DE.pkl
+```
+
+Linux / macOS:
+
+```powershell
+python craft_core.py --nodes 8 --experts 256 --layers 61 --first-moe-layer 3 --dist-file ./traces/DE.pkl
 ```
 
 For a full list of configuration options:
@@ -66,7 +76,7 @@ Windows:
 .\run_all.ps1
 ```
 
-Linux:
+Linux / macOS:
 
 ```shell
 ./run_all.sh
